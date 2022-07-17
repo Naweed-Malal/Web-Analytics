@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Script Reference[1] -->
+    <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+        .chart--container {
+            height: 100%;
+            width: 100%;
+            min-height: 530px;
+        }
+
+        .zc-ref {
+            display: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #pie {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="line" class="chart--container">
+        <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref">Powered by ZingChart</a>
+    </div>
+    <div id="bar"></div>
+    <div id='pie'><a class="zc-ref" href="https://www.zingchart.com/">Charts by ZingChart</a></div>
+
+    <script>
+        zingchart.loadModules('patterns')
+        //LINE CHART
+        fetch('https://krustykrew.site/api/performance', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(async data => {
+                var jsonData = data;
+
+                const enter1 = jsonData[0].connectStart;
+                const exit1  = jsonData[0].connectEnd;
+
+                const enter2 = jsonData[1].connectStart;
+                const exit2  = jsonData[1].connectEnd;
+
+                const enter3 = jsonData[2].connectStart;
+                const exit3  = jsonData[2].connectEnd;
+
+                const enter4 = jsonData[3].connectStart;
+                const exit4  = jsonData[3].connectEnd;
+
+                const enter5 = jsonData[4].connectStart;
+                const exit5  = jsonData[4].connectEnd;
+
+                const enter6 = jsonData[5].connectStart;
+                const exit6  = jsonData[5].connectEnd;
+
+                const enter7 = jsonData[6].connectStart;
+                const exit7  = jsonData[6].connectEnd;
+
+                const enter8 = jsonData[7].connectStart;
+                const exit8  = jsonData[7].connectEnd;
+
+                const diff1 = parseInt(exit1) - parseInt(enter1)
+                const diff2 = parseInt(exit2) - parseInt(enter2)
+                const diff3 = parseInt(exit3) - parseInt(enter3)
+                const diff4 = parseInt(exit4) - parseInt(enter4)
+                const diff5 = parseInt(exit5) - parseInt(enter5)
+                const diff6 = parseInt(exit6) - parseInt(enter7)
+                const diff7 = parseInt(exit7) - parseInt(enter7)
+                const diff8 = parseInt(exit8) - parseInt(enter8)
+
+
+                ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+                let lineChartConfig = {
+                    type: 'line',
+                    title: {
+                        text: 'Site Traffic'
+                    },
+                    subtitle: {
+                        text: 'Click On Node To Freeze The tooltip. Click and drag label vertically.'
+                    },
+                    plot: {
+                        tooltip: {
+                            visible: false
+                        },
+                        cursor: 'hand'
+                    },
+                    scaleX: {
+                        markers: [],
+                        offsetend: '75px',
+                        label: {text: 'Sessions'},
+                        labels: ['1', '2', '3', '4', '5', '6', '7', '8']
+                    },
+                    scaleY: {
+                        values: '0:100:10'
+                    },
+                    crosshairX: {},
+                    series: [{
+                        text: 'Site entered at',
+                        values: [parseInt(enter1), parseInt(enter2), parseInt(enter3), parseInt(enter4), parseInt(enter5), parseInt(enter6), parseInt(enter7), parseInt(enter8)]
+                    },
+                    {
+                        text: 'Site exited at',
+                        values: [parseInt(exit1), parseInt(exit2), parseInt(exit3), parseInt(exit4), parseInt(exit5), parseInt(exit6), parseInt(exit7), parseInt(exit8)]
+                    },
+                    {
+                        text: 'Time spent on site',
+                        values: [diff1, diff2, diff3, diff4, diff5, diff6, diff7, diff8]
+                    }
+                    ]
+                };
+
+                zingchart.render({
+                    id: 'line',
+                    data: lineChartConfig,
+                    height: '100%',
+                    width: '100%',
+                });
+
+                /*
+                 * define Marker class to construct
+                 * markers on the fly easier.
+                 */
+                function Marker(_index) {
+                    return {
+                        type: 'line',
+                        flat: false,
+                        lineColor: '#424242',
+                        lineWidth: '1px',
+                        range: [_index]
+                    }
+                }
+
+                /*
+                 * define Label class to construct
+                 * labels on the fly easier.
+                 */
+                function Label(_text, _id, _offsetX, _offsetY) {
+                    return {
+                        id: _id,
+                        text: _text,
+                        angle: 0,
+                        padding: '5px 10px 5px 10px',
+                        backgroundColor: '#eeeeee',
+                        cursor: 'pointer',
+                        flat: false,
+                        fontSize: '13px',
+                        fontStyle: 'bold',
+                        offsetX: _offsetX,
+                        offsetY: _offsetY ? _offsetY : 0,
+                        textAlign: 'left',
+                        wrapText: true
+                    }
+                }
+
+                // format the label text
+                let formatLabelText = (_nodeindex, _scaleText) => {
+                    let plotInfo = null;
+                    let nodeInfo;
+                    let seriesText = '';
+                    let labelString = isNaN(_scaleText) ? _scaleText + '<br>' : '';
+                    let color = '';
+                    let plotLength = zingchart.exec('myChart', 'getplotlength', {
+                        graphid: 0
+                    });
+
+                    for (let i = 0; i < plotLength; i++) {
+                        plotInfo = zingchart.exec('myChart', 'getobjectinfo', {
+                            object: 'plot',
+                            plotindex: i
+                        });
+                        nodeInfo = zingchart.exec('myChart', 'getobjectinfo', {
+                            object: 'node',
+                            plotindex: i,
+                            nodeindex: _nodeindex
+                        });
+                        color = plotInfo.lineColor ? plotInfo.lineColor : plotInfo.backgroundColor1;
+                        seriesText = plotInfo.text ? plotInfo.text : ('Series ' + (i + 1));
+                        labelString += '<span style="color:' + color + '">' + seriesText + ':</span>' +
+                            ' ' + nodeInfo.value + '<br>';
+                    }
+
+                    return labelString;
+                };
+
+                // global array for markers since you can only update the whole array
+                let markersArray = [];
+                let labelsArray = [];
+
+                // hash table for markers
+                let markerHashTable = {};
+
+                /*
+                 * Register a graph click event and then render a chart with the markers
+                 */
+                zingchart.bind('myChart', 'click', (e) => {
+                    let xyInformation;
+                    let nodeIndex;
+                    let scaleText;
+
+                    // make sure not a node click and click happend in plotarea
+                    if (e.target != 'node' && e.plotarea) {
+                        xyInformation = zingchart.exec('myChart', 'getxyinfo', {
+                            x: e.ev.clientX,
+                            y: e.ev.clientY
+                        });
+
+                        // if anything is found, 0 corresponds to scale-x
+                        if (xyInformation && xyInformation[0] && xyInformation[2]) {
+                            nodeIndex = xyInformation[0].scalepos;
+                            scaleText = xyInformation[0].scaletext;
+
+                            // check hash table. Add marker
+                            if (!markerHashTable['nodeindex' + nodeIndex]) {
+                                let nodeInfo = zingchart.exec('myChart', 'getobjectinfo', {
+                                    object: 'node',
+                                    nodeindex: nodeIndex,
+                                    plotindex: 0
+                                });
+
+                                let labelText = formatLabelText(nodeIndex, scaleText);
+                                let labelId = 'label_' + nodeIndex;
+                                // create a marker
+                                let newMarker = new Marker(nodeIndex);
+                                let newLabel = new Label(labelText, labelId, nodeInfo.x, nodeInfo.y);
+
+                                markerHashTable['nodeindex' + nodeIndex] = true;
+                                markersArray.push(newMarker);
+
+                                labelsArray.push(newLabel);
+
+                                // render the marker
+                                chartConfig.scaleX.markers = markersArray;
+                                chartConfig.labels = labelsArray;
+                                zingchart.exec('myChart', 'setdata', {
+                                    data: chartConfig
+                                });
+                            } else {
+                                console.log('---marker already exists----');
+                            }
+                        }
+                    }
+                });
+
+                /*
+                 * Register a node_click event and then render a chart with the markers
+                 */
+                zingchart.bind('myChart', 'node_click', (e) => {
+                    // check hash table. Add marker
+                    if (!markerHashTable['nodeindex' + e.nodeindex]) {
+                        let labelText = formatLabelText(e.nodeindex, e.scaletext);
+                        let labelId = 'label_' + e.nodeindex;
+                        // create a marker
+                        let newMarker = new Marker(e.nodeindex, labelText, e.plotindex);
+                        let newLabel = new Label(labelText, labelId, e.ev.layerX, e.ev.layerY);
+
+                        markerHashTable['nodeindex' + e.nodeindex] = true;
+                        markersArray.push(newMarker);
+
+                        labelsArray.push(newLabel);
+
+                        // render the marker
+                        chartConfig.scaleX.markers = markersArray;
+                        chartConfig.labels = labelsArray;
+                        zingchart.exec('myChart', 'setdata', {
+                            data: chartConfig
+                        });
+                    } else {
+                        console.log('---marker already exists----');
+                    }
+                });
+
+                let labelMouseDown = false;
+                let labelId = null;
+
+                /*
+                 * bind mousedown event for dragging label
+                 */
+                zingchart.bind('myChart', 'label_mousedown', (e) => {
+                    labelMouseDown = true;
+                    labelId = e.labelid;
+                    zingchart.exec('myChart', 'hideguide');
+                });
+
+                zingchart.bind('myChart', 'mousemove', (e) => {
+                    if (labelMouseDown && labelId) {
+                        zingchart.exec('myChart', 'updateobject', {
+                            type: 'label',
+                            data: {
+                                id: labelId,
+                                offsetY: e.ev.layerY
+                            }
+                        });
+                    }
+                });
+
+                zingchart.bind('myChart', 'mouseup', () => {
+                    labelMouseDown = false;
+                    labelId = null;
+                    zingchart.exec('myChart', 'showguide');
+                });
+
+                zingchart.bind('myChart', 'doubleclick', (e) => {
+                    console.log(e);
+                });
+            })
+
+        //BAR CHART
+
+        fetch('https://krustykrew.site/api/activity', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(async data => {
+                var jsonData = data;
+
+                
+                const move1 = jsonData[0].moveInd;
+                const click1 = jsonData[0].clickInd;
+
+                const move2 = jsonData[1].moveInd;
+                const click2 = jsonData[1].clickInd;
+
+                const move3 = jsonData[2].moveInd;
+                const click3 = jsonData[2].clickInd;
+
+                const move4 = jsonData[3].moveInd;
+                const click4= jsonData[3].clickInd;
+
+                const move5 = jsonData[5].moveInd;
+                const click5 = jsonData[5].clickInd;
+
+                let barChartConfig = {
+                    type: 'bar',
+                    title: {
+                        text: 'User Activity',
+                        fontSize: 24,
+                    },
+                    legend: {
+                        draggable: true,
+                    },
+                    scaleX: {
+                        // Set scale label
+                        label: { text: 'Sessions' },
+                        // Convert text on scale indices
+                        labels: ['1', '2', '3', '4', '5']
+                    },
+                    scaleY: {
+                        values: '"0:200:50"'
+                        // Scale label with unicode character
+                    },
+                    plot: {
+                        // Animation docs here:
+                        // https://www.zingchart.com/docs/tutorials/styling/animation#effect
+                        animation: {
+                            effect: 'ANIMATION_EXPAND_BOTTOM',
+                            method: 'ANIMATION_STRONG_EASE_OUT',
+                            sequence: 'ANIMATION_BY_NODE',
+                            speed: 275,
+                        }
+                    },
+                    series: [
+                        {
+                            // Plot 1 values, linear data
+                            values: [parseInt(move1), parseInt(move2), parseInt(move3), parseInt(move4), parseInt(move5)],
+                            text: 'Number of times the user moved around the site',
+                            'background-image': "PATTERN_BACKWARD_DIAGONAL"
+                        },
+                        {
+                            // Plot 2 values, linear data
+                            values: [parseInt(click1), parseInt(click2), parseInt(click3), parseInt(click4), parseInt(click5)],
+                            text: 'Number of times the user clicked on the site',
+                            'background-image': "PATTERN_ZIGZAG"
+                        }
+                    ]
+                };
+
+                // Render Method[3]
+                zingchart.render({
+                    id: 'bar',
+                    data: barChartConfig,
+                });
+            })
+
+        //LINE CHART
+
+        fetch('https://krustykrew.site/api/static', {
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(data => {
+                var jsonData = data;
+                var length = jsonData.length;
+
+                var mac = 0;
+                var windows = 0;
+
+                for (var i = 0; i < length; i++) {
+                    if (jsonData[i].userAgent.includes("Mac")) mac++;
+                    if (jsonData[i].userAgent.includes("Windows")) windows++;
+                }
+
+                var macPercent = mac / length * 100;
+                var windowsPercent = windows / length * 100;
+
+
+
+                ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+                var myConfigPie = {
+                    type: "pie",
+                    plot: {
+                        borderColor: "#2B313B",
+                        borderWidth: 5,
+                        // slice: 90,
+                        valueBox: {
+                            placement: 'out',
+                            text: '%t\n%npv%',
+                            fontFamily: "Open Sans"
+                        },
+                        tooltip: {
+                            fontSize: '18',
+                            fontFamily: "Open Sans",
+                            padding: "5 10",
+                            text: "%npv%"
+                        },
+                        animation: {
+                            effect: 2,
+                            method: 5,
+                            speed: 900,
+                            sequence: 1,
+                            delay: 3000
+                        }
+                    },
+                    source: {
+                        text: 'gs.statcounter.com',
+                        fontColor: "#8e99a9",
+                        fontFamily: "Open Sans"
+                    },
+                    title: {
+                        fontColor: "#8e99a9",
+                        text: 'Browser Type',
+                        align: "left",
+                        offsetX: 10,
+                        fontFamily: "Open Sans",
+                        fontSize: 25
+                    },
+                    plotarea: {
+                        margin: "20 0 0 0"
+                    },
+                    series: [{
+                        values: [macPercent],
+                        text: "Mac",
+                        backgroundColor: '#50ADF5',
+                    },
+                    {
+                        values: [windowsPercent],
+                        text: "Windows",
+                        backgroundColor: '#FF7965',
+                        detached: true
+                    }
+                    ]
+                };
+
+                zingchart.render({
+                    id: 'pie',
+                    data: myConfigPie,
+                    height: '100%',
+                    width: '100%'
+                });
+            })
+    </script>
+
+
+</body>
+
+</html>
+

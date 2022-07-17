@@ -1,0 +1,148 @@
+@import "https://fonts.googleapis.com/css?family=Quicksand&display=swap";
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", "Georgia", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figcaption {
+  cursor: context-menu;
+}
+
+main {
+  padding-top: 80px;
+}
+
+p {
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 9vh;
+  background-color: #d2e2ff;
+  min-height: 60px;
+  max-height: 75px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0em 1.8em;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1%;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#hamburger {
+  display: none;
+}
+.hamburgerButton {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
+  min-height: 60px;
+  max-height: 80px;
+  background-color: #d2e2ff;
+  text-align: center;
+}
+
+footer a {
+  align-items: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0em 0.2em;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.icons {
+  margin-top: -7px;
+  max-width: 8vw;
+  height: auto;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 500px) {
+  #menuItems a {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #333;
+    font-size: 1.3em;
+  }
+  #hamburger {
+    display: none;
+  }
+  #navBar label {
+    display: inline-block;
+    margin-left: 3%;
+    color: black;
+    background: #d2e2ff;
+  }
+  #menuItems {
+    display: none;
+    background: #d2e2ff;
+    margin-top: -1%;
+  }
+  #navBar input:checked ~ #menuItems {
+    display: block;
+  }
+  .hamburgerButton {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+  .icons {
+    margin-top: -5px;
+    max-width: 12vw;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+  nav a {
+    font-size: 1.2em;
+    padding: 0 1em;
+    margin-top: 3%;
+  }
+  .icons {
+    max-width: 7vw;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  nav a {
+    font-size: 1.8em;
+    margin-top: 10px;
+  }
+}

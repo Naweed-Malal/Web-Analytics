@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8">
+  <title>ZingGrid: Blank Grid</title>
+  <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    .chart--container {
+      height: 100%;
+      width: 100%;
+      min-height: 150px;
+    }
+ 
+    .zc-ref {
+      display: none;
+    }
+  </style>
+</head>
+ 
+<body>
+  <!-- CHART CONTAINER -->
+  <div id="myChart" class="chart--container">
+    <a class="zc-ref" href="https://www.zingchart.com">Powered by ZingChart</a>
+  </div>
+  <script>
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"]; // window:load event for Javascript to run after HTML
+    // because this Javascript is injected into the document head
+    window.addEventListener('load', () => {
+      // Javascript code to execute after DOM content
+ 
+      // full ZingChart schema can be found here:
+      // https://www.zingchart.com/docs/api/json-configuration/
+      fetch('https://krustykrew.site/api/activity', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(async data => {
+                var jsonData = data;
+                
+                const move1 = jsonData[0].moveInd;
+                const click1 = jsonData[0].clickInd;
+
+                const move2 = jsonData[1].moveInd;
+                const click2 = jsonData[1].clickInd;
+
+                const move3 = jsonData[2].moveInd;
+                const click3 = jsonData[2].clickInd;
+
+                const move4 = jsonData[3].moveInd;
+                const click4= jsonData[3].clickInd;
+
+                const move5 = jsonData[5].moveInd;
+                const click5 = jsonData[5].clickInd;
+                var test = [1,2,3,4,5,6,7,9,10,11,12];
+
+                let myConfig = {
+                    type: 'bar',
+                    title: {
+                        text: 'User Activity',
+                        fontSize: 24,
+                    },
+                    legend: {
+                        draggable: true,
+                    },
+                    scaleX: {
+                        // Set scale label
+                        label: { text: 'Sessions' },
+                        // Convert text on scale indices
+                        labels: ['1', '2', '3', '4', '5']
+                    },
+                    scaleY: {
+                        values: '"0:200:50"'
+                        // Scale label with unicode character
+                    },
+                    plot: {
+                        // Animation docs here:
+                        // https://www.zingchart.com/docs/tutorials/styling/animation#effect
+                        animation: {
+                            effect: 'ANIMATION_EXPAND_BOTTOM',
+                            method: 'ANIMATION_STRONG_EASE_OUT',
+                            sequence: 'ANIMATION_BY_NODE',
+                            speed: 275,
+                        }
+                    },
+                    series: [
+                        {
+                            // Plot 1 values, linear data
+                            values: [parseInt(move1), parseInt(move2), parseInt(move3), parseInt(move4), parseInt(move5)],
+                            text: 'Number of times the user moved around the site',
+                            'background-image': "PATTERN_BACKWARD_DIAGONAL"
+                        },
+                        {
+                            // Plot 2 values, linear data
+                            values: test,
+                            text: 'Number of times the user clicked on the site',
+                            'background-image': "PATTERN_ZIGZAG"
+                        }
+                    ]
+                };
+ 
+      // render chart with width and height to
+      // fill the parent container CSS dimensions
+      zingchart.render({
+        id: 'myChart',
+        data: myConfig,
+        height: '100%',
+        width: '100%'
+      });
+    });
+})
+  </script>
+</body>
+ 
+</html>

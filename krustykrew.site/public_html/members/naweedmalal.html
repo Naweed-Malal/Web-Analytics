@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Naweed Malal</title>
+        <link rel="icon" type="image/ico" href="assets/images/N64.png"/> 
+        <!--Link to CSS file-->
+        <link rel="stylesheet" href="assets/styles/naweedmalal.css"/>
+        
+        <!--Stronger font for headings of each sections-->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="titleHeadings">            
+            <div><h1 class="title"> Naweed Malal </h1></div>
+            </div>
+
+
+            <hr>
+
+            <section>
+                <h3>Table of Contents</h3>
+                <ul class="names">
+                    <li><a href="#summary">Summary</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#misc">Misc</a></li>
+                </ul>
+            </section>
+
+             <br>
+             <br>
+             <hr>
+
+             <section class="summary">
+                <h3 id="summary">Summary</h3>
+                <p class="q1"><i>I am a Computer Science student at UC San Diego. I am an aspiring software engineer who loves to learn and is willing to
+                    put the work in to fill any gaps in my knowledge. My goal is to be a project lead and become a 10x programmer.</i></p>
+            </section>
+            
+            <br>
+            <br>
+            <hr>
+            
+            <section>
+                <h3 id="skills">Skills</h3>
+                <nav class="headerTOC"> 
+                    <ul>
+                        <li> <b>Programming Languages</b>
+                            <ul>
+                                <li>Java</li>
+                                <li>C++</li>
+                                <li>Python</li>
+                            </ul>
+                        </li>
+                        <li><b>Other</b>
+                            <ul>
+                                <li>Git/GitHub</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+            <br>
+            <br>
+            <hr>
+        </header>
+
+        <main>
+            <section class="projects">
+                <h3 id="projects">Projects</h3>
+
+                <nav class="headerTOC"> 
+                    <ul>
+                        <li> <b>Recipe Manager</b> - Web application that does CRUD operations on recipes and other various features
+                            <ul>
+                                <li>Team lead in a group of ten</li>
+                                <li>Learned how to use front-end technology including HTML/CSS/JavaScript</li>
+                            </ul>
+                        </li>
+                        <li><b>Spotify Data Analysis</b> - Analyzed the months that sad music is listended to the most by looking at the Spotify top charts for 2018
+                            <ul>
+                                <li>Created graphs using R from a kaggle dataset</li>
+                                <li>Learned how to analyze and explain data</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+            
+            <br>
+            <br>
+            <hr>
+
+            <section>
+                <h3 id="hobbies">Hobbies</h3>
+                <nav class="headerTOC"> 
+                    <ul>
+                        <li> <b>Video Games</b>
+                            <ul>
+                                <li>Mario</li>
+                                <li>Borderlands</li>
+                                <li>Pokemon</li>
+                                <li>Crash Bandicoot</li>
+                                <li>Spyro</li>
+                            </ul>
+                        </li>
+                        <li><b>Anime</b>
+                            <ul>
+                                <li>Hunter x Hunter</li>
+                                <li>Attack on Titan</li>
+                                <li>Black Clover</li>
+                                <li>One Piece</li>
+                            </ul>
+                        </li>
+                        <li><b>Tennis</b>
+                        </li>
+                        <li><b>Basketball</b></li>
+                    </ul>
+                </nav>
+                <img id="img" src="https://m.media-amazon.com/images/M/MV5BZjNmZDhkN2QtNDYyZC00YzJmLTg0ODUtN2FjNjhhMzE3ZmUxXkEyXkFqcGdeQXVyNjc2NjA5MTU@._V1_FMjpg_UX1000_.jpg" alt="Hunter x Hunter" width="500">
+                
+                <p>CLICK THE IMAGE ABOVE</p>
+                <br>
+                <br>
+
+                <details>
+                    <summary>Super Mario Odessey Trailer</summary>
+			            <embed type="text/html" src="https://www.youtube.com/embed/5kcdRBHM7kM" width="800" height="500">
+                </details>
+
+            </section>
+            
+            <br>
+            <br>
+            <hr>
+        </main>
+
+        <footer>
+            <h3 id="misc">Misc.</h3>
+
+            <section>
+                <h4 id="information">Connect with me!</h4>
+                <form>
+                    <label for="fname">First Name: </label>
+                    <input type="text" id="fname">
+                    <label for="lname">Last Name: </label>
+                    <input type="text" id="lname">
+                    <label for="ename">Email: </label>
+                    <input type="text" id="ename">
+                    <button id="myBtn" type="button" onclick="alert('I will connect with you shortly!')">Submit</button>
+                </form>
+            </section>
+            
+            <br>
+
+            <section>
+                <h4 id="about">Feedback</h4>
+                <form>
+                    <textarea rows="5" cols="40"> </textarea>
+                    <br>
+                    <button id="myBtn2" type="button" onclick="alert('Thanks!')">Submit</button>
+                </form>
+            </section>
+
+        </footer>
+
+        <script src="assets/scripts/naweedmalal.js"></script>
+    </body>
+</html>

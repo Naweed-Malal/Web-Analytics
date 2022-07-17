@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Easy Chef project description" />
+
+    <!--Icon from icons8 site-->
+    <link rel="icon" href="assets/images/icons8-totoro-48.png">
+    <link rel="stylesheet" href="assets/styles/main.css">
+
+    <style>
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-top: 1%;
+        }
+
+        p {
+            margin-top: 1%;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            text-align: center;
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
+
+        .features {
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 100px;
+        }
+
+        .featureList {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 1%;
+        }
+
+        .featureList li {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 33vw;
+            font-weight: 550;
+            font-size: 1.2em;
+            cursor: context-menu;
+        }
+
+        .featureImg {
+            margin-top: 1vh;
+            margin-bottom: 4vh;
+            width: 25vw;
+            image-rendering: optimizeQuality;
+        }
+
+        @media only screen and (min-width: 200px) and (max-width: 700px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.1em;
+                text-align: center;
+            }
+
+            p {
+                font-size: 0.8em;
+            }
+
+            .featureList {
+                flex-direction: column;
+                width: 100vw;
+            }
+
+            .featureList li {
+                width: 90%;
+            }
+
+            .featureImg {
+                width: 90%;
+            }
+        }
+    </style>
+
+    <title>Mirai's Personal Website</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navBar">
+            <label for="hamburger" class="hamburgerButton">&#9776;</label>
+            <input type="checkbox" id="hamburger" />
+
+            <div id="menuItems">
+                <a href="miraiadams.html" title="Home tab">Home</a>
+                <a href="aboutMe.html" title="About tab">About</a>
+                <a href="projects.html" title="Project tab">Projects</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Easy Chef Project</h1>
+        <p>During fall quarter 2021 at UCSD, I took a Software Engineering class, CSE 110. The purpose of this class is
+            to show students the software engineering process by completing a project from start to finish. This project
+            was completed amongst a group of 10-12 people over the course of 10 weeks. My group created a web
+            application called Easy Chef. I was apart of the front end team. My primary roles were to create and style
+            the pages, connect the front and back end, and help with a few of the backend features.</p>
+        <br>
+        <h2>App Description</h2>
+        <p>Easy Chef is a CRUD application that provides recipes for users. It is easy to use and a great application
+            for those who are new to cooking and/or are looking for quick and simple recipes.</p>
+        <br>
+
+        <div class="features">
+            <h2>Features</h2>
+            <ul class="featureList">
+                <li>1. The ability to search recipes that can be filtered by dietary restrictions, allergies, amount of
+                    time, and cost <picture>
+                        <source srcset="assets/images/searchFilter.webp" type="image/webp"><img src="images/assets/searchFilter.webp"
+                            alt="Easy Chef search bar with filters" title="Easy Chef search bar with filters"
+                            class="featureImg">
+                    </picture>
+                </li>
+                <li>2. Having a personal cookbook page that allows users to include recipes of meals that they like
+                    <picture>
+                        <source srcset="assets/images/cookbook.webp" type="image/webp"><img src="assets/images/cookbook.webp"
+                            alt="Easy Chef cookbook" title="Easy Chef cookbook" class="featureImg">
+                    </picture>
+                </li>
+                <li>3. The ability for users to modify, favorite, or add recipes to save in their personal cookbook
+                    <picture>
+                        <source srcset="assets/images/editFavMod.webp" type="image/webp"><img src="assets/images/editFavMod.webp"
+                            alt="Easy Chef add, modify, or favorite recipe button"
+                            title="Easy Chef add, modify, or favorite recipe button" class="featureImg">
+                    </picture>
+                </li>
+                <li>4. A recipe page per meal that includes nutrition facts, ingredients, directions, amount of time it
+                    takes to prepare the dish <picture>
+                        <source srcset="assets/images/recipeDetails.webp" type="image/webp"><img src="assets/images/recipeDetails.webp"
+                            alt="Easy Chef recipe details" title="Easy Chef recipe details" class="featureImg">
+                    </picture>
+                </li>
+                <li>5. Login and signup system with an email and password <picture>
+                        <source srcset="assets/images/login.webp" type="image/webp"><img src="assets/images/login.webp"
+                            alt="Easy Chef sign up/log in page" title="Easy Chef sign up/log in page"
+                            class="featureImg">
+                    </picture>
+                </li>
+                <li>6. The ability to create a meal plan in which user’s can drag in meals from the personal cookbook
+                    page
+                    to each day of the week <picture>
+                        <source srcset="assets/images/mealplan.webp" type="image/webp"><img src="assets/images/mealplan.webp"
+                            alt="Easy Chef mealplan" title="Easy Chef meal plan" class="featureImg">
+                    </picture>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!--All icons from icons8 site-->
+    <footer>
+        <a href="https://www.instagram.com/mirai.adams/" target="_blank" title="Go to Mirai's Instagram account">
+            <img class="icons" src="assets/images/icons8-instagram-50.png" alt="Instagram icon">
+        </a>
+        <a href="https://www.facebook.com/mirai.adams" target="_blank" title="Go to Mirai's Facebook account">
+            <img class="icons" src="assets/images/icons8-facebook-50.png" alt="Facebook icon">
+        </a>
+        <a href="https://www.linkedin.com/in/mirai-adams-325744216/" target="_blank"
+            title="Go to Mirai's Linkedin account">
+            <img class="icons" src="assets/images/icons8-linkedin-50.png" alt="Linkedin icon">
+        </a>
+        <a href="mailto:miraiadams@yahoo.com" target="_blank" title="Email Mirai Adams">
+            <img class="icons" src="assets/images/icons8-mail-50.png" alt="Email icon">
+        </a>
+    </footer>
+</body>
+
+</html>

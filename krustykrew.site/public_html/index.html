@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Test-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CSE 135 Team Page">
+    <script src="members/assets/scripts/js-confetti.browser.js"></script>
+
+    <link rel="icon" href="icons8-spongebob-squarepants-50.png">
+
+    <title>CSE 135 Team Page</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", "Georgia", sans-serif;
+        }
+
+        h1,
+        h4 {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        #navBar {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: #B9D6F0;
+        }
+
+        .kk {
+            width: auto;
+            height: 8vh;
+            flex: 0;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 1.2em;
+        }
+
+        main {
+            padding-top: 10vh;
+        }
+
+        .hw {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        .hw2{
+            display: flex;
+        }
+    </style>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-213768479-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-213768479-1');
+
+</script>
+
+<!--<script src="https://cdn.lr-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
+<script>window.LogRocket && window.LogRocket.init('5m6o9i/krustykrewsite');</script>-->
+
+<script src="collector.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav id="navBar">
+            <img src="krustyKrew.webp" class="kk" alt="krusty crew hat">
+            <h1>Krusty Krew</h1>
+        </nav>
+    </header>
+
+    <main>
+        <h4>Team Members</h4>
+        <div class="team">
+            <ul>
+                <li><a href="members/miraiadams.html">Mirai Adams</a></li>
+                <li> <a href="members/naweedmalal.html">Naweed Malal</a></li>
+                <li> <a href="members/gurpreetsingh.html">Gurpreet Singh</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="hw">
+                <h3>Homework 1</h3>
+                <ul class="list">
+                    <li><a href="hw1/hello.php">PHP</a></li>
+                    <li><a href="robots.txt">Node</a></li>
+                    <li><a href="hw1/report.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div class="hw">
+                <h3>Homework 2</h3>
+                <div class="hw2">
+                    <div>
+                        <p>Perl</p>
+                        <ul class="list">
+                            <li><a href="https://krustykrew.site/cgi-bin/perl-hello-html-world.pl">Hello, Perl!</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/perl-hello-json-world.pl">Hello, Perl! (JSON)</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/perl-env.pl">Environment Variables</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/perl-env-pm.pl">Environment Variables (CGI)</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/perl-get-echo.pl">GET Echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/perl-post-echo.pl">POST Echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/perl-general-echo.pl">General Echo</a></li>
+                            <li><a href="https://krustykrew.site/perl-cgiform.html">Sessioning</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>C</p>
+                        <ul class="list">
+                            <li><a href="https://www.krustykrew.site/cgi-bin/c-hello-html-world.cgi">Hello, C!</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/c-hello-json-world.cgi">Hello, C! (JSON)</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/c-env.cgi">Environment Variables</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/c-get-echo.cgi">GET Echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/c-post-echo.cgi">POST Echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/c-general-request-echo.cgi">General Echo</a></li>
+                            <li><a href="https://krustykrew.site/c-cgiform.html">Sessioning</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>PHP</p>
+                        <ul class="list">
+                            <li><a href="https://www.krustykrew.site/cgi-bin/php-hello-html-world.php">Hello World!(HTML)</a></li>
+                            <li><a href="https://www.krustykrew.site/cgi-bin/php-hello-json-world.php">Hello World!(JSON)</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/php-environment.php">Environment</a></li>
+                            <li><a href="https://www.krustykrew.site/cgi-bin/php-get-echo.php">GET echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/php-post-echo.php">POST echo</a></li>
+                            <li><a href="https://www.krustykrew.site/cgi-bin/php-general-request-echo.php">General Request Echo</a></li>
+                            <li><a href="https://krustykrew.site/php-cgiform.php">State Demo</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>Python</p>
+                        <ul class="list">
+                            <li><a href="https://www.krustykrew.site/cgi-bin/py-hello-html-world.py">Hello, Python!</a></li>
+			                <li><a href="https://krustykrew.site/cgi-bin/py-hello-json-world.py">Hello, Python! (JSON)</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/py-env.py">Environment Variables</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/py-get-echo.py">GET Echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/py-post-echo.py">POST Echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/py-general-request-echo.py">General Echo</a></li>
+                            <li><a href="https://krustykrew.site/py-cgiform.html">Sessioning</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>Ruby</p>
+                        <ul class="list">
+                            <li><a href="https://www.krustykrew.site/cgi-bin/ruby-hello-html-world.rb">Hello, Ruby!</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/ruby-hello-json-world.rb">Hello, Ruby! (JSON)</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/ruby-environment.rb">Environment Variables</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/ruby-get-echo.rb">GET Echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/ruby-post-echo.rb">POST Echo</a></li>
+                            <li><a href="https://krustykrew.site/cgi-bin/ruby-general-request-echo.rb">General Echo</a></li>
+                            <li><a href="https://krustykrew.site/ruby-cgiform.html">Sessioning</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+	    <div class="hw">
+		<h3>Homework 3</h3>
+		<ul class="list">
+			<li><a href="hellodataviz.html">Hello Data Viz</a></li>
+			<li><a href="database.html">Database Grid</a></li>
+		</ul>
+	</div>
+            <div class="hw">
+                <h3>Analytics App</h3>
+                <ul class="list">
+                    <li>TBD</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="members/assets/scripts/index.js"></script>
+</body>
+
+</html>
+

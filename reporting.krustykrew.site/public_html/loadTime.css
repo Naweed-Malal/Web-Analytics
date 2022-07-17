@@ -1,0 +1,238 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #loadTime {
+    height: 200px;
+    width: 50%;
+    margin-left: 10px;
+  }
+  
+  .kk {
+    width: auto;
+    height: 8vh;
+    flex: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+  
+  main {
+    padding-top: 3%;
+  }
+  
+  .zc-body {
+    background: rgb(238, 238, 238);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+  
+  .chart--container {
+    height: 100%;
+    width: 40%;
+    min-height: 400px;
+  }
+  
+  .chart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 90%;
+    min-height: 400px;
+    margin-bottom: 15px;
+  }
+  
+  .zc-ref {
+    display: none;
+  }
+  
+  zing-grid {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 14px;
+    color: #212121;
+    border: 1px solid #ddd;
+    opacity: 1;
+  }
+  
+  zing-grid.loading {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  zing-grid.loading * {
+    opacity: 0;
+  }
+  
+  zg-caption {
+    margin-top: 50px;
+    color: #222222;
+    padding: 0px 15px;
+    font-size: 15px;
+  }
+  
+  zg-head {
+    letter-spacing: 0.5px;
+    padding-left: 1px;
+  }
+  
+  zg-head,
+  zg-head-cell {
+    font-size: 10px;
+    align-items: middle;
+    color: #888888;
+  }
+  
+  zg-cell {
+    margin-right: 0px;
+  }
+  
+  zg-head-cell:first-child,
+  zg-cell:first-child {
+    border-left: 0px solid white;
+  }
+  
+  zg-icon {
+    max-width: 14px;
+  }
+  
+  zg-row,
+  zg-cell {
+    padding: 0 10px;
+    height: 35px !important;
+  }
+  
+  zg-cell:nth-child(1) img {
+    vertical-align: middle;
+  }
+  
+  zg-cell:nth-child(1) span {
+    vertical-align: middle;
+  }
+  
+  .zc-body .user--avatar {
+    width: 20px;
+    margin-right: 7px;
+  }
+  
+  .zc-body .recent {
+    color: #69b668;
+  }
+  
+  .zc-body .unknown {
+    color: #acaaae;
+  }
+  
+  zg-filter input {
+    margin-left: 7px;
+  }
+  
+  zing-grid[loading] {
+    height: 515px;
+  }
+  
+  #question {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  #subtitle {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .chartAnalysis {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .staticBox {
+    height: auto;
+    width: 30vw;
+    background-color: #7fdbff;
+    margin-top: 40px;
+    border-radius: 25px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .staticBox p {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.5em;
+  }
+  
+  .explanation {
+    margin: 0 auto;
+    width: 70%;
+    position: relative;
+  }
+  
+  .staticBox1 {
+    height: auto;
+    width: 50vw;
+    background-color: #7fdbff;
+    margin-top: 40px;
+    border-radius: 25px;
+    border: 1px solid black;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .staticBox1 p {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.5em;
+  }
+  
+  .explanation1 {
+    margin: 0 auto;
+    width: 70%;
+    position: relative;
+  }
+  
+  #mainDiv {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #gridTitle {
+    text-align: center;
+  }
+  
+  #scatterTitle {
+    text-align: center;
+    margin-bottom: 20px;
+  }  

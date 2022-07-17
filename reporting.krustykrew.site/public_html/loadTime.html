@@ -1,0 +1,377 @@
+<!doctype html>
+<html class="zc-html">
+
+<head>
+    <meta charset="utf-8">
+    <title>Report</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABI//8ASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AEj//wAAAAAAAAAAAAAAAAAAAAAASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AAAAAAAAAAAAAAAAAEj//wBI//+Pj4+Qj4+PkI+Pj5CPj4+Qj4+PkI+Pj5CPj4+Qj4+PkI+Pj5CPj4+QAEj//wBI//8AAAAAAAAAAABI//8ASP//j4+PkP///////////////////////////////////////////////wBI//8ASP//AAAAAAAAAAAASP//AEj//4+Pj5D/////Mo8A//////8AgP///////+OrKf//////AAD///////8ASP//AEj//wAAAAAAAAAAAEj//wBI//+Pj4+Q/////zKPAP//////AID////////jqyn//////wAA////////AEj//wBI//8AAAAAAAAAAABI//8ASP//j4+PkP////8yjwD//////wCA////////46sp//////8AAP///////wBI//8ASP//AAAAAAAAAAAASP//AEj//4+Pj5D/////Mo8A//////8AgP//////////////////AAD///////8ASP//AEj//wAAAAAAAAAAAEj//wBI//+Pj4+Q////////////////AID//////////////////wAA////////AEj//wBI//8AAAAAAAAAAABI//8ASP//j4+PkP///////////////wCA//////////////////8AAP///////wBI//8ASP//AAAAAAAAAAAASP//AEj//4+Pj5D/////////////////////////////////////AAD///////8ASP//AEj//wAAAAAAAAAAAEj//wBI//+Pj4+Q////////////////////////////////////////////////AEj//wBI//8AAAAAAAAAAAAAAAAASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AAAAAAAAAAAAAAAAAAAAAABI//8ASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AEj//wBI//8ASP//AEj//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAIAHAACAAwAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMABAADgAQAA//8AAA=="
+        rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="loadTime.css">
+    <script nonce="undefined" src="https://cdn.zinggrid.com/dev/zinggrid-dev.min.js"></script>
+    <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="getDataReport.js"></script>
+</head>
+
+<body class="zc-body">
+    <h1 id="question">Does Load Time Affect the Length that a User Stays on our Site?</h1>
+    <h3 id="subtitle">Load time is an important metric to look at because it can be the reason as to why users leave your site so fast</h3>
+    <main>
+        <div class="chartAnalysis">
+            <div id="loadTime" class="chart--container">
+                <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref">Powered by ZingChart</a>
+            </div>
+            <div class="staticBox">
+                <div class="explanation">
+                    <p>Taking a look at our pie chart, we see that most of our users load our site in a reasonable
+                        amount of time.
+                        However, there are a significant number of users that do not load the site fast enough and need to investigate.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <zg-caption>
+            <h1 id="gridTitle">More Info About the Users of our Site</h1>
+        </zg-caption>
+        <zing-grid id="thisZing" data='[
+            {
+              "name": "Philip J. Fry",
+              "origin": "Earth"
+            },
+            {
+              "name": "Turanga Leela",
+              "origin": "Earth"
+            },
+            {
+              "name": "Bender Bending Rodriguez",
+              "origin": "Earth"
+            },
+            {
+              "name": "Amy Wong",
+              "origin": "Mars"
+            },
+            {
+              "name": "Doctor John Zoidberg",
+              "origin": "Decapod 10"
+            },
+            {
+              "name": "Lord Nibbler",
+              "origin": "Earth"
+            }
+          ]' pager sort gridlines="both" page-size="10" page-size-options="5,10,20" class="loading" layout="row"
+            layout-controls="disabled">
+        </zing-grid>
+        <div class="staticBox1">
+            <div class="explanation1">
+
+                <p>Network Type tells us if a slow device/network is the cause of slow load times. We can use this knowledge to determine if we need to optimize our website for slow devices or slow networks.
+                </p>
+            </div>
+        </div>
+        <zg-caption>
+            <h1 id="scatterTitle">Taking a look at how Load Time Affects User Interaction</h1>
+        </zg-caption>
+        <div class="chartAnalysis">
+            <div id="siteVisitsChart" class="chart--container"></div>
+            <div class="staticBox">
+                <div class="explanation">
+
+                    <p>The scatter plot shows us that users who load the page fast or slow will have a chance of leaving
+                        the page early.
+                        However, users who take a long time to load the site are much more likely to leave the site
+                        early than staying.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+
+    <script>
+
+        var myTheme = {
+            palette: {
+                vbar: [
+                    ['#FBFCFE', '#0082c6'],
+                ],
+                line: [
+                    ['#FBFCFE', '#1a3e88'],
+                    ['#FBFCFE', '#fb535d'],
+                ]
+            },
+            graph: {
+                backgroundColor: '#FBFCFE',
+            }
+        };
+
+        var myTheme2 = {
+            palette: {
+                vbar: [
+                    ['#FBFCFE', '#ab3a8e'],
+                ]
+            },
+            graph: {
+                backgroundColor: '#FBFCFE',
+            }
+        };
+
+
+
+        // SITE PERFORMANCE CHART
+
+        fetch('https://krustykrew.site/api/performance', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(async data => {
+                var jsonData = data;
+
+                var loadTime = [];
+                //var exitTime = [];
+                var count = 0;
+                console.log(jsonData.length);
+                for (var i = 0; i < jsonData.length; i++) {
+                    loadTime.push(jsonData[i].domContentLoadedEventStart);
+                    console.log(loadTime[i]);
+                }
+
+                /*enterTime = enterTime.map(function (d) {
+                    return d.replace('undefined', '');
+                });
+                exitTime = exitTime.map(function (d) {
+                    return d.replace('undefined', '');
+                });*/
+
+                /*for (var i = 0; i < enterTime.length; i++) {
+                    enterTime[i] += '_' + toSeconds(enterTime[i]);
+                    enterTime[i] = enterTime[i].substring(enterTime[i].indexOf("_") + 1);
+                    exitTime[i] += '_' + toSeconds(exitTime[i]);
+                    exitTime[i] = exitTime[i].substring(exitTime[i].indexOf("_") + 1);
+                }*/
+
+
+                /*var total = [];
+                for (var i = 0; i < enterTime.length; i++) {
+                    total[i] = Math.round(exitTime[i] - enterTime[i]);
+                }*/
+
+                var zeroToFourHundred = 0;
+                var fourHundredToEightHundred = 0;
+                var eightHundredPlus = 0;
+
+                for (var i = 0; i < loadTime.length; i++) {
+                    if (loadTime[i] >= 0 && loadTime[i] < 400) {
+                        zeroToFourHundred++;
+                    }
+                    if (loadTime[i] >= 400 && loadTime[i] < 800) {
+                        fourHundredToEightHundred++;
+                    }
+
+                    if (loadTime[i] >= 800) {
+                        eightHundredPlus++;
+                    }
+
+                }
+
+                var t = 0;
+                for (var i = 0; i < loadTime.length; i++) {
+                    t += loadTime[i];
+                }
+                var avg = t / loadTime.length;
+
+                ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+
+                var test = {
+                    type: "pie",
+                    plot: {
+                        borderColor: "#2B313B",
+                        borderWidth: 5,
+                        // slice: 90,
+                        tooltip: {
+                            fontSize: '18',
+                            fontFamily: "Open Sans",
+                            padding: "5 10",
+                            text: "%npv%"
+                        },
+                        animation: {
+                            effect: 2,
+                            method: 5,
+                            speed: 900,
+                            sequence: 1,
+                            delay: 3000
+                        }
+                    },
+                    title: {
+                        text: 'Load Time',
+                        align: "center",
+                        offsetX: 10,
+                        fontFamily: "Open Sans",
+                        fontSize: 35
+                    },
+                    plotarea: {
+                        margin: "100 0 0 0"
+                    },
+                    legend: {
+                        x: "75%",
+                        y: "25%",
+                        'border-width': 1,
+                        'border-color': "gray",
+                        'border-radius': "5px",
+                        header: {
+                            text: "Legend",
+                            'font-family': "Georgia",
+                            'font-size': 12,
+                            'font-color': "#3333cc",
+                            'font-weight': "normal"
+                        },
+                        marker: {
+                            type: "circle"
+                        },
+                        'toggle-action': "remove",
+                        'minimize': true,
+                        'icon': {
+                            'line-color': "#9999ff"
+                        },
+                        'max-items': 8,
+                        'overflow': "scroll"
+                    },
+                    series: [{
+                        values: [zeroToFourHundred],
+                        text: "< 400 ms",
+                        backgroundColor: '#ADD8E6',
+                    },
+                    {
+                        values: [fourHundredToEightHundred],
+                        text: "400 - 799 ms",
+                        backgroundColor: '#A9A9A9',
+                        detached: true
+                    },
+                    {
+                        values: [eightHundredPlus],
+                        text: "800+ ms",
+                        backgroundColor: '#000000',
+                        detached: true
+                    }
+                    ]
+                };
+
+                zingchart.render({
+                    id: 'loadTime',
+                    data: test,
+                    height: '100%',
+                    width: '100%',
+                    defaults: myTheme,
+                });
+
+            })
+
+
+
+
+
+
+        let data = JSON.parse(localStorage.getItem("loadDatabase"));
+        console.log(data)
+        console.log("098932432840938049809480482");
+        var jsonData = data;
+
+        var i = 0;
+
+        //fill data
+        var scatterData = [[]];
+
+        for (let i = 0; i < jsonData.length; ++i) {
+            if (jsonData[i].Session_Length > 100) {
+                continue;
+            }
+            temp = [parseInt(jsonData[i].Load_Time), jsonData[i].Session_Length];
+            console.log(jsonData[i].Load_Time);
+            scatterData.push(temp);
+        }
+        console.log(scatterData);
+        //jsonData[i].Session_Length
+        //parseInt(jsonData[i].Load_Time)
+
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+        var siteVisitsConfig = {
+            type: "scatter",
+            title: {
+                text: 'User Session Length Vs. Load Time'
+            },
+
+            scaleY: {
+                markers: [],
+                values: "0:100:10",
+                label: { text: "Session Length (s)" },
+            },
+            scaleX: {
+                markers: [],
+                values: "0:2500:100",
+                labels: [],
+                label: { text: "Load Time (ms)" },
+            },
+            'scale-x': {
+                markers: [
+                    {
+                        type: "line",
+                        range: [0, 10],
+                        'line-style': "dashed"
+                    }
+                ]
+            },
+            'scale-y': {
+                markers: [
+                    {
+                        type: "line",
+                        range: [0, 100],
+                        'line-style': "dotted"
+                    }
+                ]
+            },
+            series: [
+                {
+                    values: scatterData
+                }
+            ]
+        };
+
+        zingchart.render({
+            id: 'siteVisitsChart',
+            data: siteVisitsConfig,
+            height: "100%",
+            width: "100%",
+            defaults: myTheme2,
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const zgLoaded = document.querySelector('zing-grid');
+        zgLoaded.addEventListener('grid:ready', () => {
+            setTimeout(() => zgLoaded.classList.remove('loading'), 0);
+        });
+
+
+
+    </script>
+    <script src="setDataReport.js"></script>
+</body>
+
+</html>

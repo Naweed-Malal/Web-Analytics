@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Database</title>
+<style>
+  html,
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: scroll;
+}
+</style>
+<script src="https://cdn.zinggrid.com/zinggrid.min.js" defer></script>
+</head>
+<body>
+    <zing-grid id="static" src="https://krustykrew.site/api/static" caption="Static Data">
+       
+      </zing-grid>
+          <zing-grid id="activity" src="https://krustykrew.site/api/activity" caption="Activity Data">
+    </zing-grid>
+
+    <zing-grid id="performance" src="https://krustykrew.site/api/performance" caption="Performance Data">
+    </zing-grid>
+
+</body>
+
+<script>
+  if(window.location.hostname.charAt(0) == 'w'){
+    const staticDB = document.getElementById("static");
+    staticDB.setAttribute("src", "https://www.krustykrew.site/api/static");
+
+    const performanceDB = document.getElementById("performance");
+    performanceDB.setAttribute("src", "https://www.krustykrew.site/api/performance");
+
+    const activityDB = document.getElementById("activity");
+    activityDB.setAttribute("src", "https://www.krustykrew.site/api/activity");
+  }
+</script>
+</html>
+

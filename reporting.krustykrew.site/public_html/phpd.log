@@ -1,0 +1,55 @@
+nohup: ignoring input
+[Wed Jun  8 20:02:07 2022] PHP 7.4.3 Development Server (http://localhost:3002) started
+[Thu Jun  9 00:58:59 2022] [::1]:48270 Accepted
+[Thu Jun  9 00:58:59 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Thu Jun  9 00:58:59 2022] [::1]:48270 [200]: GET /users
+[Thu Jun  9 00:58:59 2022] [::1]:48270 Closing
+[Thu Jun  9 05:16:49 2022] [::1]:50264 Accepted
+[Thu Jun  9 05:16:49 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Thu Jun  9 05:16:49 2022] [::1]:50264 [200]: GET /users
+[Thu Jun  9 05:16:49 2022] [::1]:50264 Closing
+[Fri Jun 10 19:08:39 2022] [::1]:52894 Accepted
+[Fri Jun 10 19:08:39 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Fri Jun 10 19:08:39 2022] [::1]:52894 [200]: GET /users
+[Fri Jun 10 19:08:39 2022] [::1]:52894 Closing
+[Fri Jun 10 19:09:00 2022] [::1]:52898 Accepted
+[Fri Jun 10 19:09:00 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Fri Jun 10 19:09:00 2022] [::1]:52898 [200]: GET /users
+[Fri Jun 10 19:09:00 2022] [::1]:52898 Closing
+[Fri Jun 10 19:09:36 2022] [::1]:52902 Accepted
+[Fri Jun 10 19:09:36 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Fri Jun 10 19:09:36 2022] [::1]:52902 [201]: POST /users
+[Fri Jun 10 19:09:36 2022] [::1]:52902 Closing
+[Fri Jun 10 19:09:41 2022] [::1]:52904 Accepted
+[Fri Jun 10 19:09:41 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Fri Jun 10 19:09:41 2022] [::1]:52904 [200]: GET /users
+[Fri Jun 10 19:09:41 2022] [::1]:52904 Closing
+[Fri Jun 10 19:10:06 2022] [::1]:52906 Accepted
+[Fri Jun 10 19:10:06 2022] [::1]:52906 [200]: PUT /users/11
+[Fri Jun 10 19:10:06 2022] [::1]:52906 Closing
+[Fri Jun 10 19:10:17 2022] [::1]:52908 Accepted
+[Fri Jun 10 19:10:17 2022] [::1]:52908 [200]: PUT /users/11
+[Fri Jun 10 19:10:17 2022] [::1]:52908 Closing
+[Fri Jun 10 19:10:28 2022] [::1]:52910 Accepted
+[Fri Jun 10 19:10:28 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Fri Jun 10 19:10:28 2022] [::1]:52910 [200]: GET /users
+[Fri Jun 10 19:10:28 2022] [::1]:52910 Closing
+[Fri Jun 10 19:10:47 2022] [::1]:52912 Accepted
+[Fri Jun 10 19:10:47 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Fri Jun 10 19:10:47 2022] [::1]:52912 [200]: GET /users
+[Fri Jun 10 19:10:47 2022] [::1]:52912 Closing
+[Fri Jun 10 19:11:33 2022] [::1]:52916 Accepted
+[Fri Jun 10 19:11:33 2022] [::1]:52916 [200]: DELETE /users/11
+[Fri Jun 10 19:11:33 2022] [::1]:52916 Closing
+[Fri Jun 10 19:11:38 2022] [::1]:52918 Accepted
+[Fri Jun 10 19:11:38 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Fri Jun 10 19:11:38 2022] [::1]:52918 [200]: GET /users
+[Fri Jun 10 19:11:38 2022] [::1]:52918 Closing
+[Fri Jun 10 19:11:49 2022] [::1]:52920 Accepted
+[Fri Jun 10 19:11:49 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Fri Jun 10 19:11:49 2022] [::1]:52920 [200]: GET /users
+[Fri Jun 10 19:11:49 2022] [::1]:52920 Closing
+[Wed Jun 15 18:10:49 2022] [::1]:60596 Accepted
+[Wed Jun 15 18:10:49 2022] PHP Notice:  Undefined offset: 2 in /var/www/reporting.krustykrew.site/public_html/api/index.php on line 26
+[Wed Jun 15 18:10:49 2022] [::1]:60596 [200]: GET /users
+[Wed Jun 15 18:10:49 2022] [::1]:60596 Closing

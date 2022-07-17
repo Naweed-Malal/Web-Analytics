@@ -1,0 +1,67 @@
+.login{
+    border: 3px solid rgb(59, 59, 59);
+    border-radius: 5px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 1%;
+}
+
+.logout{
+    border: 3px double rgba(50, 168, 82, 0.53);
+    border-radius: 5px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 1%;
+}
+
+.boxinfo{
+    padding-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#heading{
+    padding-left: 10%;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+#submit{
+    border-style: outset;
+    border-color:#DCDCDC;
+    font:  15px Arial, Helvetica, sans-serif;
+}
+
+#success{
+    font-family: sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color:rgba(50, 168, 82);
+}
+
+#complete{
+    text-align: center;
+    font:  18px Arial, Helvetica, sans-serif;
+}
+
+#return{
+    text-align: center;
+    font:  15px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    background-color: #333;
+    color:white;
+    display: inline-block;
+    margin-bottom: 10px;
+
+}
+
+#test{
+    color:red;
+}
+
+#linkback{
+    text-align: center;
+}
+
+

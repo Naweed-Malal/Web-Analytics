@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vissel Kobe project description" />
+
+    <!--Icon from icons8 site-->
+    <link rel="icon" href="assets/images/icons8-totoro-48.png">
+    <link rel="stylesheet" href="assets/styles/main.css">
+
+    <style>
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+
+        .vKobe {
+            margin-top: 1%;
+            width: 40vw;
+        }
+
+        figure a {
+            display: block;
+            text-align: center;
+            margin-top: 1%;
+        }
+
+        figcaption {
+            text-align: center;
+            margin-top: 1%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-top: 1%;
+        }
+
+        p {
+            margin-top: 1%;
+            font-size: 1.2em;
+            line-height: 1.5em;
+            text-align: center;
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 1%;
+        }
+
+        .wrongVid {
+            width: 200px;
+            height: 400px;
+        }
+
+        .vidCaption {
+            font-size: 1em;
+            font-weight: 400;
+            width: 20vw;
+            text-align: center;
+            margin-top: 4%;
+            margin-left: -1px;
+        }
+
+        .results {
+            display: inline-block;
+            margin-bottom: 100px;
+        }
+
+        @media only screen and (min-width: 200px) and (max-width: 700px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            p {
+                font-size: 0.8em;
+            }
+
+            .vKobe {
+                width: 60vw;
+            }
+
+            .flex {
+                margin-top: 2%;
+            }
+
+            .wrongVid {
+                width: 100px;
+                height: 200px;
+            }
+
+            .vidCaption {
+                margin-top: 10%;
+                margin-left: 2%;
+                font-size: 0.5em;
+            }
+        }
+
+        @media only screen and (min-width: 700px) and (max-width: 900px) {
+            .vKobe {
+                width: 60vw;
+            }
+
+            .flex {
+                margin-top: 2%;
+            }
+
+            .wrongVid {
+                width: 150px;
+                height: 300px;
+            }
+
+            .vidCaption {
+                margin-top: 10%;
+                margin-left: 2%;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+
+    <title>Mirai's Personal Website</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navBar">
+            <label for="hamburger" class="hamburgerButton">&#9776;</label>
+            <input type="checkbox" id="hamburger" />
+
+            <div id="menuItems">
+                <a href="miraiadams.html" title="Home tab">Home</a>
+                <a href="aboutMe.html" title="About tab">About</a>
+                <a href="projects.html" title="Project tab">Projects</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Vissel Kobe Project</h1>
+
+        <div class="intro">
+
+            <p>Over the summer of 2021, I was given the opportunity to travel to Tokyo, Japan where I had the
+                opportunity to
+                work for an internship with Rakuten in the
+                Sports Service Development Department. My job was to create the voiceover implementation for the Vissel
+                Kobe
+                app.</p>
+            <figure class="appImg">
+                <a href="https://apps.apple.com/cn/app/vissel-kobe-official-app/id1085551322?l=en" target="_blank"
+                    title="Link to Vissel Kobe app in iOS app store">
+                    <img src="assets/images/vissselkobe.jpg" class="vKobe" alt="Vissel Kobe app" title="Vissel Kobe app">
+                    <!--Vissel Kobe image from google play store-->
+                </a>
+                <figcaption>Vissel Kobe App</figcaption>
+            </figure>
+        </div>
+        <br>
+        <div class="Objective">
+            <h2>Objective</h2>
+            <p> My goal was to create the voiceover functionality for the iOS app, Vissel Kobe.</p>
+            <br>
+            <p>The Vissel Kobe app was created for the Vissel Kobe soccer team in Japan. Vissel Kobe provides users with
+                easy access to team information, schedules, standings, and more. You can also purchase match tickets
+                using Vissel Kobe.</p>
+            <br>
+            <p> In iOS and other apple systems, there are four areas of focus: motor, cognitive, vision, and hearing.
+                Accessibility is important to improve your products' inclusivity and performance amongst all types of
+                people. It should be easy and intuitive to navigate through your app. VoiceOver is a gesture-based
+                screen reader that enables people to experience the interface on their devices without having to see the
+                screen. It allows people who are blind or have low vision to use their device with the auditory feedback
+                voiceover provides.</p>
+        </div>
+        <br>
+        <div class="Challenges">
+            <h2>Personal Challenges</h2>
+            <p>Prior to this internship, I had never used Swift before. I had to learn how to use Swift and how
+                voiceover should work before starting the project. Since my internship was during COVID-19, I was the
+                only intern working on this project. There was also a language barrier between me and the rest of the
+                team I worked with.</p>
+        </div>
+        <br>
+        <div class="results">
+            <h2>Results</h2>
+            <p>Most of the elements on the app were missing accessibility labels, traits, and/or hints. Some elements
+                would have default values set for these settings which would lead to voiceover reading any text it could
+                find, which could be confusing to users without background information. Many elements within containers
+                such as table or collection views would be combined as one big element and voiceover would miss all of
+                that information. These problems could be easily fixed by adding the necessary accessibility variables.
+            </p>
+            <br>
+            <p>The app had several features that needed to be altered when in voiceover mode. On the homepage, the
+                Vissel Kobe app has an element that automatically scrolls. Voiceover could not recognize this as an
+                accessibility element.</p>
+            <div class="flex">
+                <video class="wrongVid" controls>
+                    <source src="assets/images/wrong.mov" type="video/mp4">
+                </video>
+                <p class="vidCaption">Voiceover did not function properly when trying to swipe through the pages and
+                    could not handle the automatic scrolling</p>
+            </div>
+            <br>
+            <p>To fix this issue, I set the automatic scrolling off when voiceover is running. Then, I set it as an
+                adjustable element so that you could three finger swipe or swipe up and down with one finger to change
+                the page.</p>
+            <br>
+            <div class="flex">
+                <video class="wrongVid" controls>
+                    <source src="assets/images/right.mov" type="video/mp4">
+                </video>
+                <p class="vidCaption"> The automatic scrolling is off since voiceover is on. Voiceover now functions
+                    properly.</p>
+            </div>
+            <br>
+            <p>Voiceover was now recognizing these elements as three different pages, but the accessibility label was
+                giving the same values for each page. This had to be fixed because each page led to a different link.
+                This issue required looking into the API and setting a new variable that had the proper voiceover
+                description. Then, I could use this variable and retrieve its string value to set as the accessibility
+                label. I added a UIAccessibilityPostNotification to read the page number after a user swipes with
+                voiceover on.</p>
+            <br>
+            <p>Despite these challenges, I was able to implement voiceover in the Vissel Kobe app. The team is currently
+                working on multiple testing cycles prior to releasing this development.</p>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <!--All icons from icons8 site-->
+        <a href="https://www.instagram.com/mirai.adams/" target="_blank" title="Go to Mirai's Instagram account">
+            <img class="icons" src="assets/images/icons8-instagram-50.png" alt="Instagram icon">
+        </a>
+        <a href="https://www.facebook.com/mirai.adams" target="_blank" title="Go to Mirai's Facebook account">
+            <img class="icons" src="assets/images/icons8-facebook-50.png" alt="Facebook icon">
+        </a>
+        <a href="https://www.linkedin.com/in/mirai-adams-325744216/" target="_blank"
+            title="Go to Mirai's Linkedin account">
+            <img class="icons" src="assets/images/icons8-linkedin-50.png" alt="Linkedin icon">
+        </a>
+        <a href="mailto:miraiadams@yahoo.com" target="_blank" title="Email Mirai Adams">
+            <img class="icons" src="assets/images/icons8-mail-50.png" alt="Email icon">
+        </a>
+    </footer>
+</body>
+
+</html>
